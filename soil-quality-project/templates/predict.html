@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SoilSense - Prediction
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 SoilSense
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/soil-guide">
+            Soil Guide
+        </a>
+
+        <a href="/eda">
+            EDA
+        </a>
+
+        <a href="/models">
+            Models
+        </a>
+
+        <a href="/predict">
+            Predict
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="page-header">
+
+    <p class="small-title">
+        SOIL QUALITY PREDICTION
+    </p>
+
+    <h1>
+        Analyse Your
+        <span>Soil</span>
+    </h1>
+
+    <p>
+
+        Enter the twelve soil measurements
+        used by the machine learning models.
+
+    </p>
+
+</section>
+
+
+<section class="prediction-section">
+
+    <div class="form-card">
+
+        <h2>
+            Enter Soil Details
+        </h2>
+
+
+        {% if error %}
+
+        <div class="error-box">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+
+        <form
+            method="POST"
+            action="/predict"
+        >
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Nitrogen (N)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="N"
+                        placeholder="Example: 138"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Phosphorus (P)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="P"
+                        placeholder="Example: 8.6"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Potassium (K)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="K"
+                        placeholder="Example: 560"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Soil pH
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="pH"
+                        placeholder="Example: 7.46"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Electrical Conductivity
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="EC"
+                        placeholder="Example: 0.62"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Organic Carbon
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="OC"
+                        placeholder="Example: 0.70"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Sulphur (S)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="S"
+                        placeholder="Example: 5.9"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Zinc (Zn)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="Zn"
+                        placeholder="Example: 0.24"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Iron (Fe)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="Fe"
+                        placeholder="Example: 0.31"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Copper (Cu)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="Cu"
+                        placeholder="Example: 0.77"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Manganese (Mn)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="Mn"
+                        placeholder="Example: 8.71"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Boron (B)
+                    </label>
+
+                    <input
+                        type="number"
+                        step="any"
+                        name="B"
+                        placeholder="Example: 0.11"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="predict-button"
+            >
+
+                🔬 Analyse Soil
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+    {% if prediction %}
+
+
+    <div class="result-section">
+
+
+        <p class="section-label">
+            PREDICTION RESULTS
+        </p>
+
+        <h2>
+            Soil Fertility Results
+        </h2>
+
+
+        <div class="result-grid">
+
+
+            <div class="result-card">
+
+                <p>
+                    Decision Tree
+                </p>
+
+                <div class="result-icon">
+
+                    {{ prediction.dt_icon }}
+
+                </div>
+
+                <h3>
+
+                    {{ prediction.dt_label }}
+
+                </h3>
+
+                <span>
+
+                    Class
+                    {{ prediction.dt_class }}
+
+                </span>
+
+            </div>
+
+
+            <div class="result-card featured-result">
+
+                <p>
+                    Random Forest
+                </p>
+
+                <div class="result-icon">
+
+                    {{ prediction.rf_icon }}
+
+                </div>
+
+                <h3>
+
+                    {{ prediction.rf_label }}
+
+                </h3>
+
+                <span>
+
+                    Class
+                    {{ prediction.rf_class }}
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        {% if prediction.dt_class == prediction.rf_class %}
+
+        <div class="agreement-box">
+
+            ✓ Both models agree on the
+            predicted fertility class.
+
+        </div>
+
+        {% else %}
+
+        <div class="warning-box">
+
+            The two models produced different
+            predictions. Review the model comparison
+            metrics when interpreting this result.
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+
+    {% endif %}
+
+
+</section>
+
+
+<footer>
+
+    🌱 SoilSense |
+    Decision Tree + Random Forest
+
+</footer>
+
+
+</body>
+
+</html>

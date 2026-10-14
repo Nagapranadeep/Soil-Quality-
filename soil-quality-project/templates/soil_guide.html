@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SoilSense - Soil Guide
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 SoilSense
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/soil-guide">
+            Soil Guide
+        </a>
+
+        <a href="/eda">
+            EDA
+        </a>
+
+        <a href="/models">
+            Models
+        </a>
+
+        <a href="/predict">
+            Predict
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="page-header">
+
+    <p class="small-title">
+        UNDERSTANDING SOIL
+    </p>
+
+    <h1>
+        Know Your
+        <span>Soil</span>
+    </h1>
+
+    <p>
+
+        The machine learning models use
+        twelve soil characteristics to
+        determine fertility.
+
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        PRIMARY NUTRIENTS
+    </p>
+
+    <h2>
+        Major Soil Nutrients
+    </h2>
+
+
+    <div class="soil-info-grid">
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                N
+            </div>
+
+            <h3>
+                Nitrogen
+            </h3>
+
+            <p>
+
+                Nitrogen is an important nutrient
+                associated with plant and vegetative
+                growth.
+
+            </p>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                P
+            </div>
+
+            <h3>
+                Phosphorus
+            </h3>
+
+            <p>
+
+                Phosphorus contributes to plant
+                development and root growth.
+
+            </p>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                K
+            </div>
+
+            <h3>
+                Potassium
+            </h3>
+
+            <p>
+
+                Potassium is an important nutrient
+                used when evaluating soil fertility.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="alternate-section">
+
+    <p class="section-label">
+        SOIL CHARACTERISTICS
+    </p>
+
+    <h2>
+        Chemical Properties
+    </h2>
+
+
+    <div class="soil-info-grid">
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                pH
+            </div>
+
+            <h3>
+                Soil pH
+            </h3>
+
+            <p>
+
+                Indicates the acidity or
+                alkalinity of soil.
+
+            </p>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                EC
+            </div>
+
+            <h3>
+                Electrical Conductivity
+            </h3>
+
+            <p>
+
+                Related to dissolved ions
+                and salts in soil.
+
+            </p>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                OC
+            </div>
+
+            <h3>
+                Organic Carbon
+            </h3>
+
+            <p>
+
+                Represents carbon associated
+                with organic material in soil.
+
+            </p>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                S
+            </div>
+
+            <h3>
+                Sulphur
+            </h3>
+
+            <p>
+
+                Sulphur is another nutrient
+                measured in the dataset.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        MICRONUTRIENTS
+    </p>
+
+    <h2>
+        Trace Nutrients
+    </h2>
+
+
+    <div class="soil-info-grid">
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                Zn
+            </div>
+
+            <h3>
+                Zinc
+            </h3>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                Fe
+            </div>
+
+            <h3>
+                Iron
+            </h3>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                Cu
+            </div>
+
+            <h3>
+                Copper
+            </h3>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                Mn
+            </div>
+
+            <h3>
+                Manganese
+            </h3>
+
+        </div>
+
+
+        <div class="soil-info-card">
+
+            <div class="soil-symbol">
+                B
+            </div>
+
+            <h3>
+                Boron
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="fertility-guide">
+
+    <p class="section-label">
+        TARGET VARIABLE
+    </p>
+
+    <h2>
+        Fertility Classes
+    </h2>
+
+
+    <div class="fertility-levels">
+
+
+        <div class="fertility-level">
+
+            <div class="fertility-icon">
+                🌱
+            </div>
+
+            <h3>
+                Low Fertility
+            </h3>
+
+            <p>
+                Output = 0
+            </p>
+
+        </div>
+
+
+        <div class="fertility-level">
+
+            <div class="fertility-icon">
+                🌿
+            </div>
+
+            <h3>
+                Medium Fertility
+            </h3>
+
+            <p>
+                Output = 1
+            </p>
+
+        </div>
+
+
+        <div class="fertility-level">
+
+            <div class="fertility-icon">
+                🌳
+            </div>
+
+            <h3>
+                High Fertility
+            </h3>
+
+            <p>
+                Output = 2
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<div class="bottom-button">
+
+    <a href="/predict">
+
+        <button class="main-button">
+
+            Analyse a Soil Sample →
+
+        </button>
+
+    </a>
+
+</div>
+
+
+<footer>
+
+    🌱 SoilSense |
+    Soil Quality Classification
+
+</footer>
+
+
+</body>
+
+</html>

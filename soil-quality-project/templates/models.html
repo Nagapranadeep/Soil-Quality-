@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SoilSense - Models
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 SoilSense
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/soil-guide">
+            Soil Guide
+        </a>
+
+        <a href="/eda">
+            EDA
+        </a>
+
+        <a href="/models">
+            Models
+        </a>
+
+        <a href="/predict">
+            Predict
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="page-header">
+
+    <p class="small-title">
+        MACHINE LEARNING
+    </p>
+
+    <h1>
+        Model
+        <span>Comparison</span>
+    </h1>
+
+    <p>
+
+        Comparing Decision Tree and
+        Random Forest classifiers.
+
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        TRAINING SETUP
+    </p>
+
+    <h2>
+        Train / Test Split
+    </h2>
+
+
+    <div class="info-grid">
+
+        <div class="info-card">
+
+            <h3>
+                {{ train_rows }}
+            </h3>
+
+            <p>
+                Training Samples
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                {{ test_rows }}
+            </h3>
+
+            <p>
+                Testing Samples
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                80 / 20
+            </h3>
+
+            <p>
+                Split Ratio
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                Stratified
+            </h3>
+
+            <p>
+                Split Method
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="model-section">
+
+    <p class="section-label">
+        MODEL 1
+    </p>
+
+    <h2>
+        Decision Tree Classifier
+    </h2>
+
+    <p>
+
+        The Decision Tree learns a sequence
+        of feature-based rules using Gini
+        impurity.
+
+    </p>
+
+
+    <div class="metrics-grid">
+
+        <div class="metric-card">
+
+            <h3>
+                {{ dt.accuracy }}%
+            </h3>
+
+            <p>
+                Accuracy
+            </p>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h3>
+                {{ dt.precision }}%
+            </h3>
+
+            <p>
+                Macro Precision
+            </p>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h3>
+                {{ dt.recall }}%
+            </h3>
+
+            <p>
+                Macro Recall
+            </p>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h3>
+                {{ dt.f1 }}%
+            </h3>
+
+            <p>
+                Macro F1
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="two-chart-grid">
+
+        <div class="chart-card">
+
+            <h3>
+                Confusion Matrix
+            </h3>
+
+            <img
+                src="{{ url_for('static', filename='plots/dt_confusion.png') }}"
+            >
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <h3>
+                Decision Tree Structure
+            </h3>
+
+            <img
+                src="{{ url_for('static', filename='plots/decision_tree.png') }}"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="model-section alternate-section">
+
+    <p class="section-label">
+        MODEL 2
+    </p>
+
+    <h2>
+        Random Forest Classifier
+    </h2>
+
+    <p>
+
+        Random Forest combines predictions
+        from many decision trees. This reduces
+        variance and generally improves stability.
+
+    </p>
+
+
+    <div class="metrics-grid">
+
+        <div class="metric-card">
+
+            <h3>
+                {{ rf.accuracy }}%
+            </h3>
+
+            <p>
+                Accuracy
+            </p>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h3>
+                {{ rf.precision }}%
+            </h3>
+
+            <p>
+                Macro Precision
+            </p>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h3>
+                {{ rf.recall }}%
+            </h3>
+
+            <p>
+                Macro Recall
+            </p>
+
+        </div>
+
+
+        <div class="metric-card">
+
+            <h3>
+                {{ rf.f1 }}%
+            </h3>
+
+            <p>
+                Macro F1
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="two-chart-grid">
+
+        <div class="chart-card">
+
+            <h3>
+                Confusion Matrix
+            </h3>
+
+            <img
+                src="{{ url_for('static', filename='plots/rf_confusion.png') }}"
+            >
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <h3>
+                Feature Importance
+            </h3>
+
+            <img
+                src="{{ url_for('static', filename='plots/feature_importance.png') }}"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="comparison-box">
+
+    <p class="section-label">
+        RESULT
+    </p>
+
+    <h2>
+        Higher Test Accuracy
+    </h2>
+
+    <div class="winner">
+
+        🏆 {{ higher_accuracy_model }}
+
+    </div>
+
+    <p>
+
+        Accuracy alone should not be considered
+        the only metric because the High Fertility
+        class contains fewer samples. Precision,
+        recall and F1-score are therefore also shown.
+
+    </p>
+
+</section>
+
+
+<div class="bottom-button">
+
+    <a href="/predict">
+
+        <button class="main-button">
+
+            Predict Soil Quality →
+
+        </button>
+
+    </a>
+
+</div>
+
+
+<footer>
+    🌱 SoilSense
+</footer>
+
+
+</body>
+
+</html>

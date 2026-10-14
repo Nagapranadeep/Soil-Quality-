@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SoilSense - EDA
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 SoilSense
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">Home</a>
+
+        <a href="/soil-guide">
+            Soil Guide
+        </a>
+
+        <a href="/eda">
+            EDA
+        </a>
+
+        <a href="/models">
+            Models
+        </a>
+
+        <a href="/predict">
+            Predict
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="page-header">
+
+    <p class="small-title">
+        EXPLORATORY DATA ANALYSIS
+    </p>
+
+    <h1>
+        Understanding Our
+        <span>Dataset</span>
+    </h1>
+
+    <p>
+
+        Exploring data quality,
+        distributions and relationships
+        before model training.
+
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        DATA QUALITY
+    </p>
+
+    <h2>
+        Dataset Health
+    </h2>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <h3>
+                {{ missing }}
+            </h3>
+
+            <p>
+                Missing Values
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                {{ duplicates }}
+            </h3>
+
+            <p>
+                Duplicate Rows
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                {{ low }}
+            </h3>
+
+            <p>
+                Low Fertility
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                {{ medium }}
+            </h3>
+
+            <p>
+                Medium Fertility
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <h3>
+                {{ high }}
+            </h3>
+
+            <p>
+                High Fertility
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="analysis-section">
+
+    <div class="analysis-text">
+
+        <p class="section-label">
+            CLASS DISTRIBUTION
+        </p>
+
+        <h2>
+            Fertility Distribution
+        </h2>
+
+        <p>
+
+            The target is not perfectly balanced.
+            High fertility samples occur much less
+            frequently than the other classes.
+
+        </p>
+
+    </div>
+
+
+    <div class="chart-card">
+
+        <img
+            src="{{ url_for('static', filename='plots/fertility.png') }}"
+        >
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        FEATURE DISTRIBUTIONS
+    </p>
+
+    <h2>
+        Major Nutrients
+    </h2>
+
+
+    <div class="three-chart-grid">
+
+
+        <div class="chart-card">
+
+            <img
+                src="{{ url_for('static', filename='plots/nitrogen.png') }}"
+            >
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <img
+                src="{{ url_for('static', filename='plots/phosphorus.png') }}"
+            >
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <img
+                src="{{ url_for('static', filename='plots/potassium.png') }}"
+            >
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="alternate-section">
+
+    <p class="section-label">
+        FEATURE RELATIONSHIPS
+    </p>
+
+    <h2>
+        Correlation Heatmap
+    </h2>
+
+
+    <div class="big-chart">
+
+        <img
+            src="{{ url_for('static', filename='plots/correlation.png') }}"
+        >
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        DESCRIPTIVE STATISTICS
+    </p>
+
+    <h2>
+        Statistical Summary
+    </h2>
+
+
+    <div class="table-container">
+
+        {{ description | safe }}
+
+    </div>
+
+</section>
+
+
+<section class="summary-section">
+
+    <h2>
+        EDA Conclusion
+    </h2>
+
+    <p>
+        ✓ Missing values checked
+    </p>
+
+    <p>
+        ✓ Duplicate records checked
+    </p>
+
+    <p>
+        ✓ Class imbalance identified
+    </p>
+
+    <p>
+        ✓ Feature distributions analysed
+    </p>
+
+    <p>
+        ✓ Correlations analysed
+    </p>
+
+    <p>
+        ✓ No scaling is required for the
+        Decision Tree or Random Forest models
+    </p>
+
+</section>
+
+
+<div class="bottom-button">
+
+    <a href="/models">
+
+        <button class="main-button">
+            View ML Models →
+        </button>
+
+    </a>
+
+</div>
+
+
+<footer>
+    🌱 SoilSense
+</footer>
+
+
+</body>
+
+</html>

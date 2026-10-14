@@ -1,0 +1,989 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f7f6ef;
+
+    color: #29372d;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background: #163d28;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 8%;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 24px;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #e3ecdf;
+
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #c7df99;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 570px;
+
+    padding: 70px 10%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            120deg,
+            #163d28,
+            #3d6944
+        );
+
+    color: white;
+}
+
+.hero-content {
+    width: 58%;
+}
+
+.small-title {
+    color: #c7df99;
+
+    font-weight: bold;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: 54px;
+
+    line-height: 1.1;
+
+    margin: 15px 0;
+}
+
+.hero h1 span,
+.page-header h1 span {
+    color: #bedc88;
+}
+
+.hero-description {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #e2eadf;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.soil-card {
+    width: 320px;
+
+    text-align: center;
+
+    padding: 40px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+}
+
+.plant {
+    font-size: 85px;
+}
+
+.soil-card p {
+    color: #e3eee2;
+
+    line-height: 1.6;
+}
+
+
+/* BUTTONS */
+
+.main-button,
+.predict-button {
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    background: #d5aa4e;
+
+    color: #163d28;
+
+    margin-top: 18px;
+}
+
+.main-button:hover,
+.predict-button:hover {
+    background: #e3bd69;
+}
+
+.secondary-button {
+    border:
+        1px solid white;
+
+    padding: 13px 25px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    color: white;
+
+    background: transparent;
+
+    margin-top: 18px;
+}
+
+
+/* HEADER */
+
+.page-header {
+    padding: 65px 9%;
+
+    background:
+        linear-gradient(
+            120deg,
+            #163d28,
+            #416d45
+        );
+
+    color: white;
+}
+
+.page-header h1 {
+    font-size: 48px;
+
+    margin: 10px 0;
+}
+
+.page-header p {
+    max-width: 700px;
+
+    line-height: 1.6;
+
+    color: #e3eade;
+}
+
+
+/* SECTIONS */
+
+.section,
+.alternate-section,
+.model-section {
+    padding: 65px 9%;
+}
+
+.alternate-section {
+    background: #edf2e6;
+}
+
+.section-label {
+    color: #66894b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section h2,
+.alternate-section h2,
+.model-section h2,
+.process-section h2,
+.parameter-section h2 {
+    font-size: 34px;
+
+    color: #214830;
+}
+
+.section-description {
+    color: #657069;
+
+    max-width: 750px;
+
+    line-height: 1.7;
+}
+
+
+/* INFO */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(170px, 1fr)
+        );
+
+    gap: 20px;
+
+    margin-top: 35px;
+}
+
+.info-card,
+.metric-card {
+    background: white;
+
+    border-radius: 12px;
+
+    padding: 28px;
+
+    text-align: center;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.06);
+
+    border-bottom:
+        4px solid #648b4c;
+}
+
+.info-card h3,
+.metric-card h3 {
+    color: #214830;
+
+    font-size: 29px;
+
+    margin: 8px 0;
+}
+
+.info-card p,
+.metric-card p {
+    color: #6a746c;
+}
+
+
+/* PARAMETERS */
+
+.parameter-section {
+    padding: 65px 9%;
+
+    background: #edf2e6;
+}
+
+.parameter-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(140px, 1fr)
+        );
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.parameter-card {
+    background: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border-radius: 12px;
+}
+
+.parameter-card h3 {
+    color: #527942;
+
+    font-size: 27px;
+
+    margin: 0;
+}
+
+.center-button {
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+
+/* PIPELINE */
+
+.process-section {
+    padding: 65px 9%;
+}
+
+.process {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+.process-step {
+    width: 200px;
+
+    background: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.05);
+}
+
+.process-step div {
+    width: 42px;
+
+    height: 42px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #517841;
+
+    color: white;
+
+    border-radius: 50%;
+}
+
+.process > span {
+    font-size: 27px;
+
+    color: #799368;
+}
+
+
+/* SOIL GUIDE */
+
+.soil-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(230px, 1fr)
+        );
+
+    gap: 22px;
+
+    margin-top: 35px;
+}
+
+.soil-info-card {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 13px;
+
+    border-top:
+        4px solid #678c4d;
+
+    box-shadow:
+        0 4px 14px
+        rgba(0,0,0,0.05);
+}
+
+.soil-symbol {
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e7efde;
+
+    border-radius: 50%;
+
+    color: #355e38;
+
+    font-weight: bold;
+
+    font-size: 20px;
+}
+
+.soil-info-card h3 {
+    color: #214830;
+}
+
+.soil-info-card p {
+    color: #687169;
+
+    line-height: 1.6;
+}
+
+
+/* FERTILITY */
+
+.fertility-guide {
+    padding: 65px 9%;
+
+    text-align: center;
+
+    background: #163d28;
+
+    color: white;
+}
+
+.fertility-guide h2 {
+    font-size: 34px;
+}
+
+.fertility-levels {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+
+    max-width: 900px;
+
+    margin: 35px auto;
+}
+
+.fertility-level {
+    padding: 28px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,0.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+}
+
+.fertility-icon {
+    font-size: 48px;
+}
+
+
+/* EDA */
+
+.analysis-section {
+    padding: 65px 9%;
+
+    display: flex;
+
+    gap: 50px;
+
+    align-items: center;
+
+    background: #edf2e6;
+}
+
+.analysis-text {
+    flex: 1;
+}
+
+.analysis-text h2 {
+    color: #214830;
+
+    font-size: 33px;
+}
+
+.analysis-text p {
+    color: #667169;
+
+    line-height: 1.7;
+}
+
+.chart-card {
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(0,0,0,0.06);
+
+    overflow: hidden;
+}
+
+.chart-card img,
+.big-chart img {
+    width: 100%;
+}
+
+.three-chart-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.two-chart-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.big-chart {
+    max-width: 1000px;
+
+    margin: 30px auto 0;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 13px;
+}
+
+.table-container {
+    overflow-x: auto;
+
+    background: white;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    margin-top: 25px;
+}
+
+.data-table {
+    width: 100%;
+
+    border-collapse: collapse;
+}
+
+.data-table th {
+    padding: 9px;
+
+    background: #315d3b;
+
+    color: white;
+}
+
+.data-table td {
+    padding: 8px;
+
+    text-align: center;
+
+    border-bottom:
+        1px solid #ddd;
+}
+
+.summary-section {
+    padding: 55px 9%;
+
+    background: #edf2e6;
+
+    text-align: center;
+}
+
+.summary-section h2 {
+    color: #214830;
+}
+
+
+/* MODELS */
+
+.metrics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            1fr
+        );
+
+    gap: 18px;
+
+    margin-top: 30px;
+}
+
+.model-section > p {
+    max-width: 750px;
+
+    line-height: 1.7;
+
+    color: #657069;
+}
+
+.comparison-box {
+    padding: 55px 9%;
+
+    text-align: center;
+
+    background: #163d28;
+
+    color: white;
+}
+
+.comparison-box h2 {
+    font-size: 33px;
+}
+
+.comparison-box p {
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    color: #dce7da;
+}
+
+.winner {
+    display: inline-block;
+
+    padding: 18px 32px;
+
+    margin: 20px;
+
+    background: #d5aa4e;
+
+    color: #163d28;
+
+    font-size: 23px;
+
+    font-weight: bold;
+
+    border-radius: 10px;
+}
+
+
+/* PREDICTION */
+
+.prediction-section {
+    padding: 60px 9%;
+}
+
+.form-card {
+    max-width: 950px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.07);
+}
+
+.form-card h2 {
+    color: #214830;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-group label {
+    color: #31563a;
+
+    font-weight: bold;
+}
+
+.form-group input {
+    padding: 12px;
+
+    border:
+        1px solid #cbd5c7;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+.form-group input:focus {
+    outline:
+        2px solid #8caf70;
+}
+
+.predict-button {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 30px;
+}
+
+.result-section {
+    max-width: 950px;
+
+    margin: 50px auto 0;
+
+    text-align: center;
+}
+
+.result-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.result-card {
+    padding: 35px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 18px
+        rgba(0,0,0,0.07);
+}
+
+.featured-result {
+    border:
+        3px solid #6c914d;
+}
+
+.result-icon {
+    font-size: 65px;
+}
+
+.result-card h3 {
+    color: #214830;
+
+    font-size: 24px;
+}
+
+.result-card span {
+    display: inline-block;
+
+    padding: 7px 15px;
+
+    background: #edf2e6;
+
+    border-radius: 20px;
+
+    color: #47643c;
+}
+
+.agreement-box,
+.warning-box,
+.error-box {
+    margin-top: 25px;
+
+    padding: 15px;
+
+    border-radius: 8px;
+}
+
+.agreement-box {
+    background: #e6f3df;
+
+    color: #315d34;
+}
+
+.warning-box {
+    background: #fff0cf;
+
+    color: #795817;
+}
+
+.error-box {
+    background: #ffe1df;
+
+    color: #8a302c;
+}
+
+
+/* GENERAL */
+
+.bottom-button {
+    text-align: center;
+
+    padding: 35px;
+}
+
+footer {
+    background: #163d28;
+
+    color: #dce7da;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .soil-card {
+        margin-top: 35px;
+    }
+
+    .process {
+        flex-direction: column;
+    }
+
+    .process > span {
+        transform: rotate(90deg);
+    }
+
+    .analysis-section {
+        flex-direction: column;
+    }
+
+    .three-chart-grid,
+    .two-chart-grid,
+    .metrics-grid,
+    .form-grid,
+    .result-grid,
+    .fertility-levels {
+        grid-template-columns: 1fr;
+    }
+
+}

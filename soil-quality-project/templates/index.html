@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        SoilSense
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">
+        🌱 SoilSense
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/soil-guide">
+            Soil Guide
+        </a>
+
+        <a href="/eda">
+            EDA
+        </a>
+
+        <a href="/models">
+            Models
+        </a>
+
+        <a href="/predict">
+            Predict
+        </a>
+
+    </div>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            SMART AGRICULTURE • MACHINE LEARNING
+        </p>
+
+        <h1>
+
+            Understand Your Soil.
+
+            <span>
+                Grow Smarter.
+            </span>
+
+        </h1>
+
+        <p class="hero-description">
+
+            Soil quality classification using
+            Decision Tree and Random Forest
+            machine learning algorithms.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="/predict">
+
+                <button class="main-button">
+                    Analyse Soil →
+                </button>
+
+            </a>
+
+
+            <a href="/models">
+
+                <button class="secondary-button">
+                    Compare Models
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="soil-card">
+
+        <div class="plant">
+            🌱
+        </div>
+
+        <h3>
+            ML Soil Analysis
+        </h3>
+
+        <p>
+
+            Analyse twelve soil properties
+            and predict whether soil fertility
+            is Low, Medium or High.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <p class="section-label">
+        PROJECT OVERVIEW
+    </p>
+
+    <h2>
+        Soil Quality Classification
+    </h2>
+
+    <p class="section-description">
+
+        The system uses soil nutrient and chemical
+        measurements to classify fertility using
+        Decision Tree and Random Forest classifiers.
+
+    </p>
+
+
+    <div class="info-grid">
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                🌾
+            </div>
+
+            <h3>
+                {{ rows }}
+            </h3>
+
+            <p>
+                Soil Samples
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                🧪
+            </div>
+
+            <h3>
+                12
+            </h3>
+
+            <p>
+                Input Features
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                🌳
+            </div>
+
+            <h3>
+                3
+            </h3>
+
+            <p>
+                Fertility Classes
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="icon">
+                🤖
+            </div>
+
+            <h3>
+                2
+            </h3>
+
+            <p>
+                ML Models
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<section class="parameter-section">
+
+    <p class="section-label">
+        INPUT FEATURES
+    </p>
+
+    <h2>
+        Soil Parameters
+    </h2>
+
+
+    <div class="parameter-grid">
+
+        <div class="parameter-card">
+            <h3>N</h3>
+            <p>Nitrogen</p>
+        </div>
+
+        <div class="parameter-card">
+            <h3>P</h3>
+            <p>Phosphorus</p>
+        </div>
+
+        <div class="parameter-card">
+            <h3>K</h3>
+            <p>Potassium</p>
+        </div>
+
+        <div class="parameter-card">
+            <h3>pH</h3>
+            <p>Soil pH</p>
+        </div>
+
+        <div class="parameter-card">
+            <h3>EC</h3>
+            <p>Conductivity</p>
+        </div>
+
+        <div class="parameter-card">
+            <h3>OC</h3>
+            <p>Organic Carbon</p>
+        </div>
+
+    </div>
+
+
+    <div class="center-button">
+
+        <a href="/soil-guide">
+
+            <button class="main-button">
+
+                Learn About All Features →
+
+            </button>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="process-section">
+
+    <p class="section-label">
+        ML PIPELINE
+    </p>
+
+    <h2>
+        How The System Works
+    </h2>
+
+
+    <div class="process">
+
+
+        <div class="process-step">
+
+            <div>1</div>
+
+            <h3>
+                Dataset
+            </h3>
+
+            <p>
+                880 soil samples
+            </p>
+
+        </div>
+
+
+        <span>→</span>
+
+
+        <div class="process-step">
+
+            <div>2</div>
+
+            <h3>
+                EDA
+            </h3>
+
+            <p>
+                Analyse patterns
+            </p>
+
+        </div>
+
+
+        <span>→</span>
+
+
+        <div class="process-step">
+
+            <div>3</div>
+
+            <h3>
+                Training
+            </h3>
+
+            <p>
+                DT + Random Forest
+            </p>
+
+        </div>
+
+
+        <span>→</span>
+
+
+        <div class="process-step">
+
+            <div>4</div>
+
+            <h3>
+                Prediction
+            </h3>
+
+            <p>
+                Fertility class
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    🌱 SoilSense |
+    Soil Quality Classification using
+    Decision Tree and Random Forest
+
+</footer>
+
+
+</body>
+
+</html>
